@@ -1,0 +1,13 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Start LCN-PCHK service if enabled
+# ==============================================================================
+
+bashio::log.info "PCHK run system..."
+# cat /data/lcnpchk.xml
+exec \
+  /lcnpchk/lcnpchk \
+    -nodaemon \
+    -f /data/lcnpchk.xml \
+    -d /lcnpchk \
+    -l /lcnpchk/log
