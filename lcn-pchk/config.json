@@ -7,8 +7,6 @@
   "url": "https://github.com/alengwenus/hass-lcn-addons/tree/main/lcn-pchk",
   "startup": "services",
   "boot": "auto",
-  "options": {},
-  "schema": {},
   "ports": {
     "4114/tcp": 4114,
     "4220/tcp": 4220
