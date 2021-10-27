@@ -12,7 +12,7 @@ Adding add-ons to your Home Assistant instance is pretty easy. Navigate in your 
 Use the following URL to add this repository and click **Add**:
 
 ```txt
-https://github.com/alengwenus/hass-lcn-addons
+https://github.com/alengwenus/hass-addons
 ```
 
 ## Add-ons provided by this repository
