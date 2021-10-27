@@ -1,7 +1,7 @@
-# Home Assistant LCN Add-ons
+# Home Assistant Add-ons
 
 ## About
-This repository contains add-ons which extend the functionality of Home Assistant in conjunction with the [LCN](https://www.lcn.eu/en) automation system.
+This repository contains add-ons which extend the functionality of Home Assistant.
 
 ## Installation
 Add-ons can be installed and configured via the Home Assistant frontend on
