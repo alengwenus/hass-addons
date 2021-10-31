@@ -1,0 +1,24 @@
+{
+  "name": "eBUSd",
+  "version": "0.1",
+  "slug": "ebusd",
+  "description": "eBUSd Add-on",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "init": false,
+  "startup": "system",
+  "boot": "auto",
+  "ports": {
+    "8888/tcp": 8888
+  },
+  "options": {
+    "port": 9999,
+    "latency": 80,
+    "readonly": false
+  },
+  "schema": {
+    "ip": "str",
+    "port": "port",
+    "latency": "int(0,10000)?",
+    "readonly": "bool?"
+  }
+}
