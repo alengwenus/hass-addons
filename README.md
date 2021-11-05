@@ -20,3 +20,7 @@ https://github.com/alengwenus/hass-addons
 - **[LCN-PCHK](/lcn-pchk/README.md)**
 
     Connect to the LCN system using the LCN-PCHK software and a USB or serial hardware gateway (LCN-PKU or LCN-PK).
+
+- **[eBUSd](/ebusd/README.md)**
+
+    Connect to eBUS using the eBUSd deamon.

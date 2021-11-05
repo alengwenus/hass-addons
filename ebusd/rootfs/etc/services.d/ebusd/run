@@ -1,0 +1,19 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Start ebusd service if enabled
+# ==============================================================================
+
+bashio::log.info "ebusd run system..."
+
+declare -a args
+
+if bashio::config.true readonly; then
+    args+=("--readonly")
+fi
+
+args+=("--device=enh:$(bashio::config ip):$(bashio::config port)")
+args+=("--foreground")
+args+=("--scanconfig")
+args+=("--latency=$(bashio::config latency)")
+
+exec ebusd ${args[*]}

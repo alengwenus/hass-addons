@@ -11,7 +11,7 @@ LCN-PCHK is provided by Issendorff and is not included in this add-on. However i
 
 Follow these steps to get the add-on installed on your system:
 
-1. Follow the installation instructions provided [here](https://github.com/alengwenus/hass-lcn-addons).
+1. Follow the installation instructions provided [here](https://github.com/alengwenus/hass-addons).
 2. Navigate in your Home Assistant frontend to **Supervisor** -> **Add-on Store**.
 3. Find the "LCN-PCHK" add-on and click it.
 4. Click on the "INSTALL" button.
