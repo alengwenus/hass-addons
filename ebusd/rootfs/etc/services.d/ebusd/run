@@ -5,5 +5,15 @@
 
 bashio::log.info "ebusd run system..."
 
-exec \
-    ebusd --device=enh:$(bashio::config 'ip'):$(bashio::config 'port') --foreground --scanconfig --latency=$(bashio::config 'latency')
+declare -a args
+
+if bashio::config.true readonly; then
+    args+=("--readonly")
+fi
+
+args+=("--device=enh:$(bashio::config ip):$(bashio::config port)")
+args+=("--foreground")
+args+=("--scanconfig")
+args+=("--latency=$(bashio::config latency)")
+
+exec ebusd ${args[*]}
