@@ -12,7 +12,7 @@
   },
   "options": {
     "port": 9999,
-    "latency": 80,
+    "latency": 10,
     "readonly": false
   },
   "schema": {
