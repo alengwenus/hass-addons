@@ -1,9 +1,10 @@
 {
   "name": "eBUSd",
-  "version": "0.1",
+  "version": "1.0.0",
   "slug": "ebusd",
   "description": "eBUSd Add-on",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "url": "https://github.com/alengwenus/hass-addons/tree/main/ebusd",
   "init": false,
   "startup": "system",
   "boot": "auto",

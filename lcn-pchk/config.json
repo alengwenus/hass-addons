@@ -4,7 +4,7 @@
   "slug": "lcnpchk",
   "description": "Runs LCN-PCHK",
   "arch": ["amd64", "armhf", "armv7", "aarch64"],
-  "url": "https://github.com/alengwenus/hass-lcn-addons/tree/main/lcn-pchk",
+  "url": "https://github.com/alengwenus/hass-addons/tree/main/lcn-pchk",
   "startup": "services",
   "boot": "auto",
   "ports": {
