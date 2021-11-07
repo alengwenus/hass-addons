@@ -12,15 +12,17 @@ RUN \
         argp-standalone \
         git \
         cmake \
-    && apk add --no-cache \
-        mosquitto-dev \
+    # && apk add --no-cache \
+    #     mosquitto-dev \
     && git clone https://github.com/john30/ebusd.git \
     && cd ebusd \
-    && cmake . \
+    && cmake \
+        -DCMAKE_CXX_FLAGS="-static-libgcc -static-libstdc++" \
+        . \
     && make \
     && make install \
     && cd .. \
     && apk del --no-cache --purge .build-dependencies \
-    && rm -f -r ebusd
+    && rm -rf ebusd
 
 COPY rootfs /
