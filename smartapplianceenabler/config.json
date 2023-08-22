@@ -1,0 +1,21 @@
+{
+  "name": "Smart Appliance Enabler",
+  "version": "1.0.0",
+  "slug": "smartapplianceenabler",
+  "description": "Smart Appliance Enabler Add-on",
+  "arch": ["amd64"],
+  "url": "https://github.com/alengwenus/hass-addons/tree/main/smartapplianceenabler",
+  "startup": "services",
+  "boot": "manual",
+  "init": false,
+  "host_network": true,
+  "ports": {
+    "8080": 8080,
+    "55555": 55555
+  },
+  "ports_description": {
+    "8080": "Smart Appliance Enabler port",
+    "55555": "SEMP port"
+  },
+  "homeassistant_api": true
+}

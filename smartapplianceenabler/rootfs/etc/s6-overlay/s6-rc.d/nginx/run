@@ -1,0 +1,9 @@
+#!/command/with-contenv bashio
+# ==============================================================================
+# Home Assistant Community Add-on: Smart Appliance Enabler
+# Runs the Smart Appliance Enabler daemon
+# ==============================================================================
+
+bashio::log.info "Starting NGinx..."
+
+exec envsubst < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf & nginx

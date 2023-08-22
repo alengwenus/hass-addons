@@ -1,0 +1,9 @@
+#!/command/with-contenv bashio
+# ==============================================================================
+# Home Assistant Community Add-on: Smart Appliance Enabler
+# Runs the Smart Appliance Enabler daemon
+# ==============================================================================
+
+bashio::log.info "Starting Smart Appliance Enabler..."
+
+exec /opt/sae/smartapplianceenabler start & sleep infinity

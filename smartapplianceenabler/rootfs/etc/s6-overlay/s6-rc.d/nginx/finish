@@ -1,0 +1,8 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: Smart Appliance Enabler
+# Take down the S6 supervision tree when Smart Appliance Enabler fails
+# ==============================================================================
+
+exec /run/s6/basedir/bin/halt

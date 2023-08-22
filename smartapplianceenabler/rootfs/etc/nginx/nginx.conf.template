@@ -1,0 +1,37 @@
+# Run nginx in foreground.
+daemon off;
+
+# This is run inside Docker.
+user root;
+
+# Pid storage location.
+pid /var/run/nginx.pid;
+
+# Set number of worker processes.
+worker_processes 1;
+
+# Enables the use of JIT for regular expressions to speed-up their processing.
+pcre_jit on;
+
+# Write error log to the add-on log.
+error_log /proc/1/fd/1 error;
+
+# Load allowed environment vars
+env SUPERVISOR_TOKEN;
+
+# Max num of simultaneous connections by a worker process.
+events {
+    worker_connections 512;
+}
+
+http {
+    server {
+        listen 80;
+
+        location /api {
+            proxy_set_header Authorization "Bearer ${SUPERVISOR_TOKEN}";
+            proxy_set_header Content-Type "application/json";
+            proxy_pass http://supervisor/core/api;
+        }
+    }
+}

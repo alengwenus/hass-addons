@@ -1,0 +1,64 @@
+# user owning the process and the files
+USER=sae
+
+# group owning the process and the files
+GROUP=sae
+
+# directory where the Smart Appliance Enabler executable and configuration files are placed
+SAE_HOME=/opt/sae
+
+# pid file
+PID_FILE_DIR=/var/run/sae
+PID_FILE=$PID_FILE_DIR/smartapplianceenabler.pid
+
+# Logging
+#     the application level logging configuration of the Smart Appliance Enabler
+LOGGING_CONFIG=/opt/sae/logback-spring.xml
+#     the redirected stdout
+STDOUT_LOG=/var/log/smartapplianceenabler.log
+#     the redirected stderr
+STDERR_LOG=/var/log/smartapplianceenabler.err
+
+# fully qualified path name of Java Virtual Machine binary
+JAVA_BIN=/usr/bin/java
+
+# Enable this line to disable discovery of this Smart Appliance Enabler instance by the Sunny Home Manager
+# This is useful for testing only.
+#JAVA_OPTS="${JAVA_OPTS} -Dsae.discovery.disable=true"
+
+# Enable this line to clear configuration (all appliances, ...) after the given number of seconds after the first
+# appliance has been saved.
+# This is useful for testing only.
+#JAVA_OPTS="${JAVA_OPTS} -Dsae.autoclear=30"
+
+# Enable this line to bind the Smart Appliance Enabler to a specific network address.
+# This has to be the address of one of the local network interfaces.
+#JAVA_OPTS="${JAVA_OPTS} -Dserver.address=192.168.178.33"
+
+# Enable this line to set the network address the Sunny Home Manager should use to access this
+# Smart Appliance Enabler instance. Default is the address to which the Smart Appliance Enabler is bound.
+# This line should only be enabled for virtualization scenarios, e.g the Smart Appliance Enabler runs
+# inside a Docker container.
+JAVA_OPTS="${JAVA_OPTS} -Dsemp.gateway.address=192.168.2.51"
+
+# The UPnP part of the SEMP protocol requires a stream server which by default uses a random unused port.
+# If you would like to use a dedicated port it can be specified here.
+JAVA_OPTS="${JAVA_OPTS} -Dsemp.streamserver.port=55555"
+
+# Enable this line to have the Smart Appliance Enabler use a different port. By default port 8080 is used.
+#JAVA_OPTS="${JAVA_OPTS} -Dserver.port=8080"
+
+# Headless mode should always be activated
+JAVA_OPTS="${JAVA_OPTS} -Djava.awt.headless=true"
+
+# Maximum heap size should be 256MB for Smart Appliance Enabler
+JAVA_OPTS="${JAVA_OPTS} -Xmx256m"
+
+# Set language/country from which Java derives default locale
+JAVA_OPTS="${JAVA_OPTS} -Duser.language=de -Duser.country=DE"
+
+# Configure pigpioj to use pigpiod daemon in order to avoid forcing the Smart Appliance Enabler to run as root
+JAVA_OPTS="${JAVA_OPTS} -DPIGPIOD_HOST=localhost"
+
+# Enable this line for remote debugging on port 8000
+# JAVA_OPTS="${JAVA_OPTS} -Xdebug -Xrunjdwp:transport=dt_socket,address=0.0.0.0:8000,server=y,suspend=n"
