@@ -2,7 +2,8 @@
 # shellcheck shell=bash
 # ==============================================================================
 # Home Assistant Community Add-on: Smart Appliance Enabler
-# Take down the S6 supervision tree when Smart Appliance Enabler fails
+# Configures NGINX for use with the Smart Appliance Enabler
 # ==============================================================================
 
-exec /run/s6/basedir/bin/halt
+echo $SUPERVISOR_TOKEN}
+envsubst "${SUPERVISOR_TOKEN}" < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf

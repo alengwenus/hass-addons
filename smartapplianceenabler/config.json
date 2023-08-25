@@ -11,7 +11,7 @@
   "host_network": true,
   "ports": {
     "8080": 8080,
-    "55555": 55555
+    "55555": null
   },
   "ports_description": {
     "8080": "Smart Appliance Enabler port",

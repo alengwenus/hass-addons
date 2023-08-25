@@ -2,7 +2,9 @@
 # shellcheck shell=bash
 # ==============================================================================
 # Home Assistant Community Add-on: Smart Appliance Enabler
-# Take down the S6 supervision tree when Smart Appliance Enabler fails
+# Configure the Smart Appliance Enabler
 # ==============================================================================
 
-exec /run/s6/basedir/bin/halt
+SEMP_PORT="$(bashio::addon.port 55555)"
+echo $SEMP_PORT
+envsubst "${SEMP_PORT}" < /etc/default/smartapplianceenabler.template > /etc/default/smartapplianceenabler

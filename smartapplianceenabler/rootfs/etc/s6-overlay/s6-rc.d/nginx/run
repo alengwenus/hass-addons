@@ -6,4 +6,4 @@
 
 bashio::log.info "Starting NGinx..."
 
-exec envsubst < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf & nginx
+exec nginx
