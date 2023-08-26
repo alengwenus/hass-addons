@@ -10,12 +10,12 @@
   "init": false,
   "host_network": true,
   "ports": {
-    "8080": 8080,
-    "55555": null
+    "8080/tcp": 8080,
+    "55555/tcp": 55555
   },
   "ports_description": {
     "8080": "Smart Appliance Enabler port",
-    "55555": "SEMP port"
+    "55555": "SEMP Port"
   },
   "homeassistant_api": true
 }

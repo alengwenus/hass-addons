@@ -43,10 +43,10 @@ JAVA_OPTS="${JAVA_OPTS} -Dsemp.gateway.address=192.168.2.51"
 
 # The UPnP part of the SEMP protocol requires a stream server which by default uses a random unused port.
 # If you would like to use a dedicated port it can be specified here.
-JAVA_OPTS="${JAVA_OPTS} -Dsemp.streamserver.port=${SEMP_PORT}"
+JAVA_OPTS="${JAVA_OPTS} -Dsemp.streamserver.port={{ .semp_port }}"
 
 # Enable this line to have the Smart Appliance Enabler use a different port. By default port 8080 is used.
-#JAVA_OPTS="${JAVA_OPTS} -Dserver.port=8080"
+JAVA_OPTS="${JAVA_OPTS} -Dserver.port={{ .server_port }}"
 
 # Headless mode should always be activated
 JAVA_OPTS="${JAVA_OPTS} -Djava.awt.headless=true"

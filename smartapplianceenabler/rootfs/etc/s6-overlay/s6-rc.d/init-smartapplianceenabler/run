@@ -5,6 +5,10 @@
 # Configure the Smart Appliance Enabler
 # ==============================================================================
 
-SEMP_PORT="$(bashio::addon.port 55555)"
-echo $SEMP_PORT
-envsubst "${SEMP_PORT}" < /etc/default/smartapplianceenabler.template > /etc/default/smartapplianceenabler
+bashio::var.json \
+    semp_port "$(bashio::addon.port 55555)" \
+    server_port "$(bashio::addon.port 8080)" \
+    | tempio \
+        -template /etc/default/smartapplianceenabler.template \
+        -out /etc/default/smartapplianceenabler
+

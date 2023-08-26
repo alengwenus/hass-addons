@@ -5,5 +5,9 @@
 # Configures NGINX for use with the Smart Appliance Enabler
 # ==============================================================================
 
-echo $SUPERVISOR_TOKEN}
-envsubst "${SUPERVISOR_TOKEN}" < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
+
+bashio::var.json \
+    supervisor_token "${SUPERVISOR_TOKEN}" \
+    | tempio \
+        -template /etc/nginx/nginx.conf.template \
+        -out /etc/nginx/nginx.conf
