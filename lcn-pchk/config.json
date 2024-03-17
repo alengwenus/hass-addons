@@ -1,12 +1,13 @@
 {
   "name": "LCN-PCHK",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "slug": "lcnpchk",
   "description": "Runs LCN-PCHK",
   "arch": ["amd64", "armhf", "armv7", "aarch64"],
   "url": "https://github.com/alengwenus/hass-addons/tree/main/lcn-pchk",
   "startup": "services",
   "boot": "auto",
+  "init": false,
   "ports": {
     "4114/tcp": 4114,
     "4220/tcp": 4220

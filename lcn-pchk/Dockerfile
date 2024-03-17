@@ -12,6 +12,7 @@ RUN \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         curl \
+        unzip \
     && rm -rf /var/lib/apt/lists/* \
     && if [[ "armv7 armhf aarch64" = *"$BUILD_ARCH"* ]]; \
       then \
@@ -36,25 +37,27 @@ RUN \
           /var/lib/apt/lists/* \
           /usr/src/wiringpi; \
       fi
-      
-      
+
+
 # Install LCN-PCHK
 RUN \
     set -x \
     && cd /tmp \
     && if [[ "armv7 armhf aarch64" = *"$BUILD_ARCH"* ]]; \
-      then \            
-        curl -q -k -L -o /tmp/lcnpchk322_arm.tar.gz http://www.lcn.eu/download/lcnpchk322_RaspBianJessy_dynamic.tar.gz \
-        && tar -xf lcnpchk322_arm.tar.gz -C /lcnpchk; \
+      then \
+        curl -q -k -J -L -o /tmp/lcnpchk322_arm.tar.gz.zip https://www.lcn.eu/?wpdmdl=8088 \
+        && unzip lcnpchk322_arm.tar.gz.zip \
+        && tar -xf lcnpchk322_RaspBianJessy_dynamic.tar.gz -C /lcnpchk; \
       else \
-        curl -q -k -L -o /tmp/lcnpchk322_amd64.tar.gz http://www.lcn.eu/download/lcnpchk322_debian64bit_dynamic.tar.gz \
-        && tar -xf lcnpchk322_amd64.tar.gz -C /lcnpchk; \
+        curl -q -k -J -L -o /tmp/lcnpchk322_amd64.tar.gz.zip https://www.lcn.eu/?wpdmdl=8086 \
+        && unzip lcnpchk322_amd64.tar.gz.zip \
+        && tar -xf lcnpchk322_debian64bit_dynamic.tar.gz -C /lcnpchk; \
       fi \
-    && rm -r /tmp/* \
-    && mkdir /lcnpchk/log \
+    && rm -rf /tmp/* \
+    && mkdir -p /lcnpchk/log \
     && chmod a+x /lcnpchk/lcnpchk \
     && chown root:root /lcnpchk/lcnpchk \
-    && sed -i 's/\/root/\/data/' /etc/passwd    
+    && sed -i 's/\/root/\/data/' /etc/passwd
 
 COPY rootfs /
 
