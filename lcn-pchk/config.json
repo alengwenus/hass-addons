@@ -1,6 +1,6 @@
 {
   "name": "LCN-PCHK",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "slug": "lcnpchk",
   "description": "Runs LCN-PCHK",
   "arch": ["amd64", "armhf", "armv7", "aarch64"],

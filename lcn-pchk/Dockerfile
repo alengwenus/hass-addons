@@ -1,6 +1,8 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
+ENV WIRINGPI_VERSION=2.61-1
+
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -20,7 +22,7 @@ RUN \
         && apt-get install -y --no-install-recommends \
           build-essential \
           git \
-        && git clone --depth 1 https://github.com/WiringPi/WiringPi /usr/src/wiringpi \
+        && git clone --depth 1 --branch $WIRINGPI_VERSION https://github.com/WiringPi/WiringPi /usr/src/wiringpi \
         && cd /usr/src/wiringpi/wiringPi \
         && make \
         && make install \
