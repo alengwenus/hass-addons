@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-ENV WIRINGPI_VERSION=2.61-1
+ENV WIRINGPI_VERSION=3.2
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]

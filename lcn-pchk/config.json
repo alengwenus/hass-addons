@@ -1,6 +1,6 @@
 {
   "name": "LCN-PCHK",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "slug": "lcnpchk",
   "description": "Runs LCN-PCHK",
   "arch": ["amd64", "armhf", "armv7", "aarch64"],
@@ -8,6 +8,7 @@
   "startup": "services",
   "boot": "auto",
   "init": false,
+  "devices": ["/dev/mem"],
   "ports": {
     "4114/tcp": 4114,
     "4220/tcp": 4220
@@ -26,6 +27,7 @@
     "licensee": "lcnpchk",
     "license_keys": []
   },
+  "privileged": ["SYS_RAWIO"],
   "schema": {
     "device": "str",
     "user": "str",
