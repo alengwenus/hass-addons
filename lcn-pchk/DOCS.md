@@ -36,7 +36,7 @@ The add-on provides several configuration options via the add-on's configuration
 
 ### Comments:
 - **device** does not contain the whole device path (e.g. `/dev/ttyUSB0`) but only the last substring! To get a list of the available devices, go to **Supervisor** -> **System**. Click the three vertical dots in the **Host System** section and choose **Hardware**.
-- **license-keys** should be provided as a comma separated list of strings (e.g. `["111abcdef", "222abcdef", "333abcdef"]`) or a yaml bullet point list. The order and type of the keys (so whether it's a product key or an update key) does not matter.
+- **license-keys** should be provided as a comma separated list of strings (e.g. `["111abcdef", "222abcdef", "333abcdef"]`) or a yaml bullet point list. The order and type of the keys (so whether it's a product key or an update key) does not matter. **Note that the license key needs to entered without dashes!**
 - possible time server URLs for **sync_time** are: `pool.ntp.org`, `time.nist.gov`, `time-nw.nist.gov`, `time-a.nist.gov`, `time-b.nist.gov`, `ptbtime1.ptb.de`, `ptbtime2.ptb.de`
 
 ### Notes:
