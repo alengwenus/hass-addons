@@ -62,4 +62,6 @@ RUN \
     && sed -i 's/\/root/\/data/' /etc/passwd
 
 COPY rootfs /
+RUN chmod a+x /etc/cont-init.d/lcnpchk.sh
+RUN chmod a+x /etc/services.d/lcnpchk/*
 
